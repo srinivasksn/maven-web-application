@@ -85,7 +85,7 @@
 
 	</dependencies>
 	
-	<distributionManagement>
+	<!-- <distributionManagement>
 	    <repository>
 	      <id>nexus</id>
 	      <url>http://ec2-13-232-38-224.ap-south-1.compute.amazonaws.com:8081/repository/flipcart-release/</url>
@@ -94,7 +94,7 @@
 	      <id>nexus</id>
 	      <url>http://ec2-13-232-38-224.ap-south-1.compute.amazonaws.com:8081/repository/flipcart-snapshot/</url>
 	    </snapshotRepository>
-	</distributionManagement>
+	</distributionManagement> -->
 
 	<build>
 		<finalName>maven-web-application</finalName>
