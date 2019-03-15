@@ -1,0 +1,30 @@
+node
+{
+    def M2_HOME=tool name: 'M2_HOME', type: 'maven'
+      def mvnBIN= "${M2_HOME}/bin"
+
+stage('checkout')
+{
+
+git branch: 'development', credentialsId: 'c4d2385c-d576-4788-934c-0bc0fe9efc3c', url: 'https://github.com/srinivasksn/maven-web-application.git'
+
+ }
+ 
+stage('mvn clean package')
+
+{
+
+sh "${mvnBIN}/mvn clean package"
+
+}
+
+stage ("Deploy the app into the tomcat server")
+
+{
+
+sh 'cp $WORKSPACE/target/*.war /opt/apache-tomcat-9.0.16/webapps'
+
+
+echo 'app deployed successfully'
+}
+}
